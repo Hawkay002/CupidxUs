@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day Countdown 2026</title>
-        <meta name="description" content="An exciting new experience awaits everyone!">
+    <meta name="description" content="An exciting new experience awaits everyone!">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cupidxus.vercel.app/">
@@ -20,7 +20,9 @@
     <meta name="twitter:title" content="Cupid×Us">
     <meta name="twitter:description" content="An exciting new experience awaits everyone!">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/Hawkay002/CupidxUs/main/cupidxus.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Dancing+Script:wght@600&family=Rye&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --paper-cream: #f4f1e8;
@@ -113,12 +115,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            
         }
 
         .countdown-container {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* 2x2 Grid */
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
             justify-content: center;
             margin-top: 10px;
@@ -150,38 +151,18 @@
             transition: transform 0.3s ease;
         }
 
-        /* --- USER VALUES APPLIED HERE --- */
-        
-        .time-box:nth-child(1){
-            border-radius: 50% 50% 50% 5px;
-            transform: rotate(270deg);
-        }
-        /* Counter-rotate text for Box 1 (-270deg) */
+        .time-box:nth-child(1){ border-radius: 50% 50% 50% 5px; transform: rotate(270deg); }
         .time-box:nth-child(1) .inner { transform: rotate(-270deg); }
 
-        .time-box:nth-child(2) {
-             border-radius: 50% 50% 5px 50%; 
-             transform: rotate(90deg);
-        }
-        /* Counter-rotate text for Box 2 (-90deg) */
+        .time-box:nth-child(2) { border-radius: 50% 50% 5px 50%; transform: rotate(90deg); }
         .time-box:nth-child(2) .inner { transform: rotate(-90deg); }
 
-        .time-box:nth-child(3){
-             border-radius: 50% 50% 50% 5px;
-             transform: rotate(180deg);
-        }
-        /* Counter-rotate text for Box 3 (-180deg) */
+        .time-box:nth-child(3){ border-radius: 50% 50% 50% 5px; transform: rotate(180deg); }
         .time-box:nth-child(3) .inner { transform: rotate(-180deg); }
         
-        .time-box:nth-child(4) {
-             border-radius: 50% 50% 50% 5px;
-             transform: rotate(-270deg);
-        }
-        /* Counter-rotate text for Box 4 (270deg) */
+        .time-box:nth-child(4) { border-radius: 50% 50% 50% 5px; transform: rotate(-270deg); }
         .time-box:nth-child(4) .inner { transform: rotate(270deg); }
 
-
-        /* Inner wrapper to handle text alignment inside the rotated bubble */
         .inner {
             display: flex;
             flex-direction: column;
@@ -190,7 +171,7 @@
         }
 
         .time-box:hover {
-            transform: scale(1.05) !important; /* Removed rotate reset to keep shape */
+            transform: scale(1.05) !important;
         }
 
         .time-value {
@@ -206,6 +187,32 @@
             color: var(--text-brown);
         }
 
+        /* Refresh Button Styling */
+        .refresh-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--paper-cream);
+            color: var(--deep-red);
+            border: 2px solid var(--deep-red);
+            font-family: 'Rye', cursive;
+            text-transform: uppercase;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px rgba(201, 48, 44, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .refresh-btn:hover {
+            background-color: var(--deep-red);
+            color: var(--paper-cream);
+            transform: translateY(-2px);
+            box-shadow: 2px 2px 0px rgba(201, 48, 44, 0.2);
+        }
+
+        .refresh-btn:active {
+            transform: translateY(0px);
+        }
+
         footer {
             background-color: var(--deep-red);
             color: var(--paper-cream);
@@ -214,7 +221,6 @@
             justify-content: space-between;
             align-items: center;
             font-family: 'Comfortaa', sans-serif;
-            margin-top: 0px !important; 
         }
 
         .footer-brand { font-size: 1.5rem; font-weight: bold; }
@@ -222,7 +228,6 @@
 
         @media (max-width: 768px) {
             h1.main-title { font-size: 1.5rem; }
-           
             .time-box { width: 85px; height: 85px; }
             .time-value { font-size: 1.6rem; }
             footer { flex-direction: column; gap: 10px; text-align: center; }
@@ -238,12 +243,12 @@
             <div class="wavy-lines"></div>
         </div>
         <h1 class="main-title">Post Card for Everyone</h1>
-        <p class="subtitle" style="margin-bottom: 0px !important; ">Counting down the miles & minutes!</p>
+        <p class="subtitle" style="margin-bottom: 0px !important;">Counting down the miles & minutes!</p>
     </header>
 
     <main>
-        <h2 style="color: var(--deep-red); font-family: 'Rye'; margin-bottom: 10px; justify-content: center !important;  text-align: center !important; margin-top: 0px !important;">An exciting new experience awaits everyone!</h2>
-        <p style="margin-top:0px !important; margin-bottom: 10px !important; ">Waiting patiently for...</p>
+        <h2 style="color: var(--deep-red); font-family: 'Rye'; margin-bottom: 10px; text-align: center; margin-top: 0px !important;">An exciting new experience awaits everyone!</h2>
+        <p style="margin-top:0px !important; margin-bottom: 10px !important;">Waiting patiently for...</p>
         
         <div class="countdown-container">
             <div class="time-box">
@@ -272,7 +277,8 @@
             </div>
         </div>
 
-        <p style="color: var(--deep-red); font-family: 'Rye'; margin-top: 40px; letter-spacing: 2px; font-size: 15px; margin-bottom: 0px !important; margin-top: 10px !important; ">This</p>  <h2 style="color: var(--deep-red); font-family: 'Rye'; letter-spacing: 2px; margin-top: 5px !important;">VALENTINE'S DAY</h2>
+        <p style="color: var(--deep-red); font-family: 'Rye'; margin-top: 10px !important; letter-spacing: 2px; font-size: 15px; margin-bottom: 0px !important;">This</p>
+        <h2 style="color: var(--deep-red); font-family: 'Rye'; letter-spacing: 2px; margin-top: 5px !important;">VALENTINE'S DAY</h2>
         <p style="font-family: 'Dancing Script', cursive; font-size: 1.2rem; margin-top: 0px !important; margin-bottom: 5px !important;">(Almost!)</p>
     </main>
 
@@ -294,14 +300,26 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+            // Update UI elements if they exist
+            if(document.getElementById("days")) {
+                document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+            }
 
             if (distance < 0) {
                 clearInterval(x);
-                document.querySelector(".countdown-container").innerHTML = "<h2 style='color: var(--deep-red);'>It's Today! Happy Valentine's Day!</h2>";
+                document.querySelector(".countdown-container").innerHTML = `
+                    <div style="display: flex; flex-direction: column; align-items: center; grid-column: span 2; padding: 7px;">
+                        <h2 style="color: var(--deep-red); font-family: 'Rye'; text-align: center; margin: 0; line-height: 1.4;">
+                            It's Today!<br>Happy Valentine's Day!
+                        </h2>
+                        <button class="refresh-btn" onclick="window.location.reload()">
+                            Refresh Page
+                        </button>
+                    </div>
+                `;
             }
         }, 1000);
     </script>
