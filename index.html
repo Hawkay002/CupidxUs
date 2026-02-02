@@ -1,58 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Countdown 2026</title>
-    <meta name="description" content="An exciting new experience awaits everyone!">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cupidxus.vercel.app/">
-    <meta property="og:title" content="Cupid×Us">
-    <meta property="og:description" content="An exciting new experience awaits everyone!">
-    
-    <meta property="og:image" content="https://raw.githubusercontent.com/Hawkay002/CupidxUs/main/cupidxus.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://cupidxus.vercel.app/">
-    <meta name="twitter:title" content="Cupid×Us">
-    <meta name="twitter:description" content="An exciting new experience awaits everyone!">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/Hawkay002/CupidxUs/main/cupidxus.png">
+    <title>Cupid × Us</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Dancing+Script:wght@600&family=Rye&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
+            /* Vintage Theme Variables */
             --paper-cream: #f4f1e8;
             --deep-red: #c9302c;
             --soft-pink: #e8b0b0;
             --text-brown: #5a4a42;
+            --highlight-gold: #f4d03f;
+            
+            /* Mapping old variables to new theme for JS compatibility */
+            --1-color: var(--paper-cream); 
+            --2-color: var(--deep-red);
+            --3-color: #b02b28;
+            --4-color: var(--text-brown);
+            --5-color: var(--soft-pink);
+            --6-color: var(--text-brown);
+            --8-color: var(--paper-cream);
+            --9-color: #8c6b5d;
         }
 
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px 0; /* Add padding so top/bottom aren't touching edges */
             background-color: var(--paper-cream);
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
             font-family: 'Comfortaa', sans-serif;
             color: var(--text-brown);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            align-items: center;
+            /* REMOVED justify-content: center to prevent clipping tall cards */
+            justify-content: flex-start; 
+            overflow-y: auto; /* Ensure scrolling works */
         }
 
-        header {
-            padding: 20px;
-            position: relative;
-            text-align: center;
-        }
-
+        /* --- DECORATIVE STAMPS --- */
         .stamp-mark {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 15px;
+            left: 15px;
             width: 70px;
             height: 70px;
             border: 3px double var(--deep-red);
@@ -62,266 +58,459 @@
             justify-content: center;
             color: var(--deep-red);
             font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             transform: rotate(-15deg);
             opacity: 0.8;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            z-index: 10;
+            background: rgba(244, 241, 232, 0.9);
+            pointer-events: none;
         }
 
         .post-mark-right {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            opacity: 0.7;
+            pointer-events: none;
         }
+
         .heart-stamp {
-            width: 50px;
-            height: 60px;
-            border: 3px dotted var(--deep-red);
-            background-color: var(--soft-pink);
+            width: 40px;
+            height: 50px;
+            border: 2px dotted var(--deep-red);
+            background-color: rgba(232, 176, 176, 0.2);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--deep-red);
             margin-bottom: 5px;
         }
+
         .wavy-lines {
-            width: 80px;
-            height: 30px;
-            background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, var(--deep-red) 5px, var(--deep-red) 7px);
-            opacity: 0.6;
+            width: 70px;
+            height: 25px;
+            background-image: repeating-linear-gradient(-45deg, transparent, transparent 4px, var(--deep-red) 4px, var(--deep-red) 5px);
         }
 
-        h1.main-title {
-            font-family: 'Rye', cursive;
+        /* --- SHARED CONTAINER STYLES --- */
+        .start-page, .phone-screen, .result-page {
+            width: 90%;
+            max-width: 400px;
+            background: #fff;
+            border: 3px dotted var(--deep-red);
+            border-radius: 15px;
+            box-shadow: 8px 8px 0px rgba(201, 48, 44, 0.1);
+            position: relative;
+            box-sizing: border-box;
+            text-align: center;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        /* --- SPECIFIC PAGE STYLES --- */
+        
+        .start-page {
+            padding: 20px;
+            min-height: 600px;
+        }
+
+        .phone-screen {
+            padding: 0;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .result-page {
+            /* Padding top avoids stamp overlap */
+            padding: 100px 20px 40px 20px;
+            height: auto; 
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-family: 'Rye', serif;
+            font-size: 2.5rem;
             color: var(--deep-red);
-            font-size: 3rem;
-            margin-bottom: 0px;
+            margin: 10px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        p.subtitle {
-            font-family: 'Dancing Script', cursive;
+        .header {
+            height: 60px;
+            background-color: transparent;
+            color: var(--deep-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Rye', serif;
             font-size: 1.5rem;
-            color: var(--deep-red);
+            border-bottom: 2px dotted var(--soft-pink);
+            margin: 0 15px;
+            cursor: pointer;
         }
 
-        main {
+        /* --- CHATBOX --- */
+        .chatbox {
+            padding: 20px;
             flex: 1;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
         }
 
-        .countdown-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        .message {
+            padding: 12px 18px;
+            margin: 8px 0;
+            max-width: 85%;
+            font-size: 14px;
+            line-height: 1.4;
+            border-radius: 15px;
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+        }
+
+        .message.user {
+            background-color: var(--deep-red);
+            color: white;
+            align-self: flex-end;
+            border-radius: 20px 20px 2px 20px;
+        }
+
+        .message.bot {
+            background-color: #fff;
+            border: 2px solid var(--deep-red);
+            color: var(--text-brown);
+            align-self: flex-start;
+            border-radius: 20px 20px 20px 2px;
+        }
+
+        .message.bot a {
+            color: var(--deep-red);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* --- BUTTONS --- */
+        .choices {
+            padding: 15px 20px;
+            background: rgba(244, 241, 232, 0.8);
+            border-top: 1px dotted var(--deep-red);
+        }
+
+        .choice-button {
+            font-family: 'Dancing Script', cursive;
+            background-color: white;
+            color: var(--deep-red);
+            border: 2px solid var(--deep-red);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            width: 100%;
+            transition: transform 0.2s;
+            font-weight: bold;
+        }
+
+        .choice-button:hover {
+            background-color: var(--deep-red);
+            color: white;
+            transform: scale(1.02);
+        }
+
+        /* NEW: Button Group Styles for Result Page */
+        .button-group {
+            display: flex;
             justify-content: center;
-            margin-top: 10px;
-            padding: 40px;
-            border: 3px dotted var(--deep-red);
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.5);
+            gap: 10px;
+            margin-top: 20px;
+            width: 100%;
+            flex-wrap: wrap;
             position: relative;
+            z-index: 20; /* Ensure buttons are above everything */
         }
 
-        .countdown-container::before, .countdown-container::after {
-            content: '♥';
-            position: absolute;
-            font-size: 2rem;
+        .start-button, .restart-button {
+            font-family: 'Rye', serif;
+            background-color: var(--deep-red);
+            color: var(--paper-cream);
+            border: none;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            box-shadow: 4px 4px 0px rgba(90, 74, 66, 0.2);
+            text-transform: uppercase;
+        }
+
+        .start-button:hover, .restart-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px rgba(90, 74, 66, 0.2);
+        }
+
+        /* --- IMAGES --- */
+        .top-image {
+            width: 90%;
+            object-fit: cover;
+            margin: 20px 0;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+        }
+
+        /* RESULT IMAGE FIX: Max Height Cap */
+        .result-image {
+            display: block;
+            margin: 10px auto;
+            width: auto;
+            max-width: 90%; 
+            /* Cap height to avoid overly long card */
+            max-height: 400px; 
+            border: 5px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transform: rotate(1deg);
+            object-fit: contain; /* Maintain aspect ratio inside the box */
+        }
+
+        /* --- LINKS & FOOTER --- */
+        a {
+            text-decoration: none;
             color: var(--deep-red);
+            transition: opacity 0.3s;
         }
-        .countdown-container::before { top: -25px; left: -10px; transform: rotate(-20deg); }
-        .countdown-container::after { bottom: -25px; right: -10px; transform: rotate(20deg); }
-
-        .time-box {
-            background-color: var(--paper-cream);
-            border: 3px solid var(--deep-red);
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 3px 3px 0px rgba(201, 48, 44, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .time-box:nth-child(1){ border-radius: 50% 50% 50% 5px; transform: rotate(270deg); }
-        .time-box:nth-child(1) .inner { transform: rotate(-270deg); }
-
-        .time-box:nth-child(2) { border-radius: 50% 50% 5px 50%; transform: rotate(90deg); }
-        .time-box:nth-child(2) .inner { transform: rotate(-90deg); }
-
-        .time-box:nth-child(3){ border-radius: 50% 50% 50% 5px; transform: rotate(180deg); }
-        .time-box:nth-child(3) .inner { transform: rotate(-180deg); }
         
-        .time-box:nth-child(4) { border-radius: 50% 50% 50% 5px; transform: rotate(-270deg); }
-        .time-box:nth-child(4) .inner { transform: rotate(270deg); }
-
-        .inner {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .time-box:hover {
-            transform: scale(1.05) !important;
-        }
-
-        .time-value {
-            font-size: 2rem;
-            font-weight: 700;
+        .a2 {
+            cursor: pointer;
+            font-family: 'Rye', serif;
             color: var(--deep-red);
-            line-height: 1;
         }
 
-        .time-label {
+        p2, p3 {
+            display: block;
             font-family: 'Dancing Script', cursive;
             font-size: 1.1rem;
             color: var(--text-brown);
+            margin-top: 10px;
         }
-
-        /* Refresh Button Styling */
-        .refresh-btn {
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: var(--paper-cream);
-            color: var(--deep-red);
-            border: 2px solid var(--deep-red);
-            font-family: 'Rye', cursive;
-            text-transform: uppercase;
-            font-size: 1rem;
-            cursor: pointer;
-            box-shadow: 4px 4px 0px rgba(201, 48, 44, 0.2);
-            transition: all 0.2s ease;
-        }
-
-        .refresh-btn:hover {
-            background-color: var(--deep-red);
-            color: var(--paper-cream);
-            transform: translateY(-2px);
-            box-shadow: 2px 2px 0px rgba(201, 48, 44, 0.2);
-        }
-
-        .refresh-btn:active {
-            transform: translateY(0px);
-        }
-
+        
         footer {
-            background-color: var(--deep-red);
-            color: var(--paper-cream);
-            padding: 15px 20px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.7rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        footer a { color: var(--deep-red); }
+
+        /* --- INTERMEDIATE PAGE ICONS --- */
+        .icon-button {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column; 
             align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px; 
+            border: 3px solid var(--deep-red);
+            padding: 5px;
+            background: white;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .icon-caption {
+            font-size: 1.2rem;
+            color: var(--deep-red);
+            margin-top: 10px; 
+            text-align: center;
+            font-family: 'Rye', serif;
+        }
+
+        .icon-button:hover .app-icon {
+            transform: scale(1.1); 
+        }
+
+        /* --- ANIMATIONS & TOOLTIPS --- */
+        .icon {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0;
+            pointer-events: none;
+            animation: fall 3s ease-in-out forwards;
+            z-index: 100;
+        }
+
+        .star { color: var(--highlight-gold); }
+        .heart { color: var(--deep-red); }
+
+        @keyframes fall {
+            0% { transform: translateY(-50px) scale(1) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(500px) scale(0.5) rotate(180deg); opacity: 0; }
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
             font-family: 'Comfortaa', sans-serif;
+            visibility: hidden;
+            width: 120px;
+            background-color: var(--deep-red);
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 30;
         }
 
-        .footer-brand { font-size: 1.5rem; font-weight: bold; }
-        .footer-links, .footer-copy { font-size: 0.9rem; }
-
-        @media (max-width: 768px) {
-            h1.main-title { font-size: 1.5rem; }
-            .time-box { width: 85px; height: 85px; }
-            .time-value { font-size: 1.6rem; }
-            footer { flex-direction: column; gap: 10px; text-align: center; }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
+
+        /* Hide scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--soft-pink); border-radius: 10px; }
     </style>
 </head>
-<body>
 
-    <header>
-        <div class="stamp-mark">SPECIAL DELIVERY<br>14/02</div>
+<body>
+    
+    <div class="start-page" id="start-page">
+        <div class="stamp-mark">SPECIAL<br>DELIVERY</div>
         <div class="post-mark-right">
             <div class="heart-stamp">♥</div>
             <div class="wavy-lines"></div>
         </div>
-        <h1 class="main-title">Post Card for Everyone</h1>
-        <p class="subtitle" style="margin-bottom: 0px !important;">Counting down the miles & minutes!</p>
-    </header>
 
-    <main>
-        <h2 style="color: var(--deep-red); font-family: 'Rye'; margin-bottom: 10px; text-align: center; margin-top: 0px !important;">An exciting new experience awaits everyone!</h2>
-        <p style="margin-top:0px !important; margin-bottom: 10px !important;">Waiting patiently for...</p>
+        <h1>
+            <div class="a2" onclick="triggerIconShower(event)">
+                Cupid × Us
+            </div>  
+        </h1>
         
-        <div class="countdown-container">
-            <div class="time-box">
-                <div class="inner">
-                    <span class="time-value" id="days">00</span>
-                    <span class="time-label">Days</span>
-                </div>
-            </div>
-            <div class="time-box">
-                <div class="inner">
-                    <span class="time-value" id="hours">00</span>
-                    <span class="time-label">Hours</span>
-                </div>
-            </div>
-            <div class="time-box">
-                <div class="inner">
-                    <span class="time-value" id="minutes">00</span>
-                    <span class="time-label">Mins</span>
-                </div>
-            </div>
-            <div class="time-box">
-                <div class="inner">
-                    <span class="time-value" id="seconds">00</span>
-                    <span class="time-label">Secs</span>
-                </div>
-            </div>
+        <img src="IMG/front1.gif" class="top-image" alt="Top Image" onclick="triggerIconShower(event)">
+        
+        <div class="button-group">
+            <button id="start1-button" class="start-button">Start</button>
         </div>
 
-        <p style="color: var(--deep-red); font-family: 'Rye'; margin-top: 10px !important; letter-spacing: 2px; font-size: 15px; margin-bottom: 0px !important;">This</p>
-        <h2 style="color: var(--deep-red); font-family: 'Rye'; letter-spacing: 2px; margin-top: 5px !important;">VALENTINE'S DAY</h2>
-        <p style="font-family: 'Dancing Script', cursive; font-size: 1.2rem; margin-top: 0px !important; margin-bottom: 5px !important;">(Almost!)</p>
-    </main>
+        <br><br>
+        <p2>Personality quiz inspired by <a href="https://www.16personalities.com/free-personality-test">MBTI</a></p2>
+        <p2 style="font-size: 0.9rem; font-family:'Comfortaa'">
+            This quiz is created for entertainment purposes only.<br>
+            Art and code by: <a href="https://iseej.github.io/Card/" target="_blank">Shovith (Sid)</a>
+        </p2>
+    </div>
+
+
+    <div class="phone-screen" id="interm" style="display: none;">
+        <div class="header" id="header1" onclick="window.open('new.html', '_blank');">14 / 02</div>
+        <br><br><br>
+        <p style="font-family: 'Dancing Script'; font-size: 1.5rem; text-align: center; margin: 0 25px; line-height: 1.6;">
+            "It’s Valentine’s Day... <br> A mysterious post card has arrived just for you."
+        </p>
+        <br><br><br>
+        <button id="start-button" class="icon-button">
+            <img src="IMG/Heh/C0.png" alt="App" class="app-icon">
+            <span class="icon-caption">Open Post Card</span>
+        </button>
+    </div>
+
+
+    <div class="phone-screen" id="phone-screen" style="display: none;">
+        <div class="header" id="header" onclick="window.open('new.html', '_blank');">Cupid x Us</div>
+        <div id="chatbox" class="chatbox"></div>
+        <div id="choices" class="choices"></div>
+    </div>
+
+
+    <div class="result-page" id="result-page" style="display: none;">
+        <div class="stamp-mark">OFFICIAL<br>MATCH</div>
+        
+        <p style="font-family:'Dancing Script', cursive; font-size: 1.4rem; margin-top: 0;">
+            Feel free to share your result!
+        </p>
+        
+        <div class="a2" style="font-size: 1.3rem; margin-bottom: 10px;" onclick="triggerIconShower(event)">
+            #Cupid×Us
+        </div>
+        
+        <img id="result-image" class="result-image" src="" alt="Result Image">
+        <p id="result-text" class="result-text" style="font-size: 1rem; line-height: 1.4; padding: 0 10px;"></p>
+        
+        <div class="button-group">
+            <button class="restart-button tooltip" onclick="share()">Share
+                <span class="tooltiptext">Share</span>
+            </button>
+            <button class="restart-button" onclick="window.location.reload()">Restart</button>
+        </div>
+        
+        <p style="font-size: 0.8rem; margin: 15px 0 5px 0;">
+            Made by <a href="https://wa.me/918777845713" target="_blank">Shovith (Sid)</a>
+        </p>
+
+        <p3>
+            <br>
+            if (result === 'sooo meeee') { <br>
+            &nbsp;&nbsp; Yayyy! It describes you!; <br>
+            } else { <br>
+            &nbsp;&nbsp; it describes your future partner!; <br>
+            }
+        </p3>
+    </div>
+
+
+    <div id="debug-box" style="display: none; position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
+        <strong>Scores:</strong>
+        <pre id="debug-scores"></pre>
+    </div>
 
     <footer>
-        <div class="footer-brand">Cupid x Us</div>
-        <div class="footer-links">cupidxus.vercel.app</div>
-        <div class="footer-copy">©2026 Shovith Debnath</div>
+        <p2 style="font-size: 0.7rem; font-family:'Comfortaa'">
+            All artwork is copyrighted.<br>
+            <a href="https://iseej.github.io/Card/" target="_blank">&copy; 2025-2026 Shovith Debnath (Sid). All Rights Reserved.</a>
+        </p2>
     </footer>
 
-    <script>
-        const countDownDate = new Date("Feb 14, 2026 00:00:00").getTime();
+    <audio id="notifSound" src="vibe.mp3"></audio>
+    <audio id="dingSound" src="ding.mp3"></audio>
+    <audio id="popSound" src="pop.mp3"></audio>
 
-        const x = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Update UI elements if they exist
-            if(document.getElementById("days")) {
-                document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-            }
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.querySelector(".countdown-container").innerHTML = `
-                    <div style="display: flex; flex-direction: column; align-items: center; grid-column: span 2; padding: 7px;">
-                        <h2 style="color: var(--deep-red); font-family: 'Rye'; text-align: center; margin: 0; line-height: 1.4;">
-                            It's Today!<br>Happy Valentine's Day!
-                        </h2>
-                        <button class="refresh-btn" onclick="window.location.reload()">
-                            Refresh Page
-                        </button>
-                    </div>
-                `;
-            }
-        }, 1000);
-    </script>
 </body>
 </html>
