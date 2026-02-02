@@ -1,6 +1,3 @@
-
-/*https://github.com/IseeJ
-Please don't use my code without permission!*/
 document.addEventListener("DOMContentLoaded", function () {
     let resultPage = document.getElementById("result-page");
 
@@ -15,16 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
         if (resultPage.style.display === "none") return;
 
         let gif = document.createElement("img");
-        gif.src = "IMG/Heh/C9.gif";  
+        gif.src = "";  
         gif.style.position = "absolute";
         gif.style.top = Math.random() * (window.innerHeight - 150) + "px"; 
         gif.style.right = "-200px";
         gif.style.width = "150px";
-        gif.style.cursor = "pointer";
+        gif.style.cursor = "none";
+        gif.style.display ="none";
         gif.style.animation = "floatUpDown 3s ease-in-out infinite"; 
         
         gif.onclick = function () {
-            window.open("new.html", "_blank"); 
+            window.open(""); 
         };
         document.body.appendChild(gif);
 
