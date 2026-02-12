@@ -207,7 +207,7 @@ const dialogue = [
     choices: [
       { id: 1, text: "I’m telling them immediately", type: 'B', weight: 2, next: 14, followUpText: ["I’ll just call them. If they say no, their loss.", "Like, what's the actual worst that could happen?"] },
       { id: 2, text: "Keep talking and stay on their radar", type: 'S', weight: 2, next: 14, followUpText: ["Consistency is the whole game, babe."] },
-      { id: 3, text: "Do absolutely nothing.", type: 'W', weight: 1, next: 13, followUpText: ["They will take that secret to my grave."] },
+      { id: 3, text: "Do absolutely nothing.", type: 'W', weight: 1, next: 13, followUpText: ["I will take that secret to my grave."] },
       { id: 4, text: "Avoid them like the plague", type: 'W', weight: 2, next: 13, followUpText: ["I’ll literally run if I see them coming."] },
       { id: 5, text: "Make subtle moves", type: 'B', weight: 1, next: 14, followUpText: ["Just small hints. I’m not desperate."] },
     ]
