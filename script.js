@@ -135,7 +135,7 @@ const dialogue = [
   // 6 (4)    
   {
     speaker: 'bot',
-    text: ["Okay, relax. I’ll explain—dramatic ass 🙄.", "I’m your personal Cupid.", "Your love life? Yeah, that’s my job."],
+    text: ["Okay, relax. I’ll explain...dramatic ass 🙄.", "I’m your personal Cupid.", "Your love life? Yeah, that’s my job."],
     choices: [
       { id: 1, text: "Clearly you’re failing at your job 🤓☝️", type: 'P', weight: 2, next: 7, followUpText: [] },
       { id: 2, text: "Okay Cupid, what do you want?", type: 'G', weight: 2, next: 8, followUpText: [] },
@@ -146,7 +146,7 @@ const dialogue = [
   // 7 (5_1)    
   {
     speaker: 'bot',
-    text: ["Damn, rude. I’m trying my fucking best.", "Anyway, I gotta ask you 12 questions—Cupid rules.", "Once a year, deal with it."],
+    text: ["Damn, rude. I’m trying my fucking best.", "Anyway, I gotta ask you 12 questions, Cupid rules.", "Once a year, deal with it."],
     choices: [
       { id: 1, text: "Fine, get it over with", type: 'R', weight: 1, next: 10, followUpText: [] },
       { id: 2, text: "Whatever, I’m down", type: 'A', weight: 1, next: 10, followUpText: ["Maybe this will fix your tragic performance!"] },
@@ -190,10 +190,10 @@ const dialogue = [
   // 11 (Q2)    
   {
     speaker: 'bot',
-    text: ["Okayyy, romantic as hell.", "So, 2) who do you usually fall for? Don’t lie, I’ll know."],
+    text: ["Okayyy, romantic as hell. *sarcasm*", "So, 2) who do you usually fall for? Don’t lie, I’ll know."],
     choices: [
       { id: 1, text: "Coworkers or classmates", type: 'W', weight: 1, next: 12, followUpText: ["I mean, I'm stuck with them everyday!"] },
-      { id: 2, text: "I fall fast—usually at first sight", type: 'B', weight: 2, next: 12, followUpText: [] },
+      { id: 2, text: "I fall fast, usually at first sight", type: 'B', weight: 2, next: 12, followUpText: [] },
       { id: 3, text: "Someone I've known forever, like a best friend", type: 'S', weight: 2, next: 12, followUpText: [] },
       { id: 4, text: "Honestly? No one. I’m over it.", type: 'W', weight: 2, next: 12, followUpText: ["Unless we’re talking about celebrities, obviously."] },
       { id: 5, text: "I don't have a type. When I know, I know.", type: 'B', weight: 1, next: 12, followUpText: [] },
@@ -215,7 +215,7 @@ const dialogue = [
   // 13 (Q4_3,4)    
   {
     speaker: 'bot',
-    text: ["Ngl gurl, same. While we’re waiting and overthinking—", "4) What kind of dates actually get you excited?"],
+    text: ["Ngl gurl, same. While we’re waiting and overthinking", "4) What kind of dates actually get you excited?"],
     choices: [
       { id: 1, text: "Chill and low-key where we can actually talk", type: 'G', weight: 2, next: 15, followUpText: [] },
       { id: 2, text: "Something spontaneous and fun as hell", type: 'P', weight: 2, next: 16, followUpText: [] },
@@ -266,7 +266,7 @@ const dialogue = [
       { id: 2, text: "Bowling - let the games begin", type: 'A', weight: 2, next: 18, followUpText: ["Loser gets a hug. It's a win-win."] },
       { id: 3, text: "Library - studying and being quiet together", type: 'R', weight: 2, next: 18, followUpText: ["Stolen glances in the stacks are iconic."] },
       { id: 4, text: "Hiking - getting lost in nature together", type: 'A', weight: 2, next: 18, followUpText: ["Love is a trek, after all."] },
-      { id: 5, text: "Orchard - picking fruit and holding hands", type: 'A', weight: 1, next: 18, followUpText: [] },
+      { id: 5, text: "Orchard - picking fruit and holding hands", type: 'A', weight: 1, next: 18, followUpText: ["👉👈"] },
     ]
   },
 
@@ -296,7 +296,7 @@ const dialogue = [
   // 20 (Q7)    
   {
     speaker: "bot",
-    text: ["7) Don’t be vague—give me an example."],
+    text: ["7) Don’t be vague...give me an example."],
     choices: [
       { id: 1, text: "Sudden hugs and kisses out of nowhere", type: "B", weight: 2, next: 25, followUpText: [] },
       { id: 2, text: "Cuddling up and holding hands tight", type: "S", weight: 2, next: 25, followUpText: [] },
@@ -326,7 +326,7 @@ const dialogue = [
   // 23 (Q7)    
   {
     speaker: "bot",
-    text: ["7) Alright gift-giver, what kinda gifts we talking—cheap or thoughtful?"],
+    text: ["7) Alright gift-giver, what kinda gifts we talking, cheap or thoughtful?"],
     choices: [
       { id: 1, text: "Extravagant and one-of-a-kind", type: "B", weight: 2, next: 25, followUpText: ["If they want it, I’m getting it for them. Period."] },
       { id: 2, text: "Practical things they actually need", type: "S", weight: 2, next: 25, followUpText: ["I pay attention to the details, unlike some people."] },
@@ -347,7 +347,7 @@ const dialogue = [
   // 25 (Q8)    
   {
     speaker: "bot",
-    text: ["Oh? Interesting. I’m learning shit about you already.", "8) So what’s your date outfit vibe—hot or comfy?"],
+    text: ["Oh? Interesting. I’m learning shit about you already.", "8) So what’s your date outfit vibe, hot or comfy?"],
     choices: [
       { id: 1, text: "Classy and timeless vibes", type: "D", weight: 2, next: 26, followUpText: [] },
       { id: 2, text: "Stylish and cool as fuck", type: "P", weight: 1, next: 26, followUpText: [] },
@@ -374,7 +374,7 @@ const dialogue = [
   // 27 (Q10)    
   {
     speaker: "bot",
-    text: ["Okay, smart ass choice. Enough fake romance—", "10) Who are you in your friend group?"],
+    text: ["Okay, smart ass choice. Enough fake romance", "10) Who are you in your friend group?"],
     choices: [
       { id: 1, text: "The one who’s actually taken", type: "D", weight: 2, next: 28, followUpText: [] },
       { id: 2, text: "The quiet, mysterious one", type: "G", weight: 2, next: 31, followUpText: [] },
@@ -410,7 +410,7 @@ const dialogue = [
   // 30 (Q11_3,4)    
   {
     speaker: 'bot',
-    text: ["Yeah, I can tell—you’re cool.", "11) So if you met your past self, what love advice are you giving?"],
+    text: ["Yeah, I can tell, you’re cool.", "11) So if you met your past self, what love advice are you giving?"],
     choices: [
       { id: 1, text: "Tell them to never settle for less", type: 'B', weight: 2, next: 33, followUpText: [] },
       { id: 2, text: "Tell them to actually put in some effort", type: 'W', weight: 2, next: 33, followUpText: [] },
@@ -432,7 +432,7 @@ const dialogue = [
   // 32 (Q11...)    
   {
     speaker: 'bot',
-    text: ["Bitch you better be joking, of course you have friends. I’m one now.", "And yeah—you are your own best friend. Don’t forget that shit.", "11) So—past you. What’s the love advice?"],
+    text: ["Bitch you better be joking, of course you have friends. I’m one now.", "And yeah..you are your own best friend. Don’t forget that shit.", "11) So—past you. What’s the love advice?"],
     choices: [
       { id: 1, text: "Never ever settle for a basic bitch", type: 'B', weight: 2, next: 33, followUpText: [] },
       { id: 2, text: "Try harder to make things work", type: 'W', weight: 2, next: 33, followUpText: [] },
@@ -456,11 +456,11 @@ const dialogue = [
   // 34    
   {
     speaker: 'bot',
-    text: ["Noted. Manifesting that for you.", "So what are you actually doing today—", "besides this dumb little quiz?"],
+    text: ["Noted. Manifesting that for you.", "So what are you actually doing today", "besides this dumb little quiz?"],
     choices: [
       { id: 1, text: "Eating way too much chocolate", type: 'R', weight: 2, next: 35, followUpText: [] },
       { id: 2, text: "Going out to have some real fun", type: 'A', weight: 1, next: 35, followUpText: [] },
-      { id: 3, text: "Working or studying like a loser T^T", type: 'R', weight: 1, next: 35, followUpText: [] },
+      { id: 3, text: "Working/studying like a loser T^T", type: 'R', weight: 1, next: 35, followUpText: [] },
       { id: 4, text: "Duh, I actually have a date", type: 'A', weight: 1, next: 35, followUpText: [] },
       { id: 5, text: "Zero plans, just rotting at home", type: 'R', weight: 1, next: 35, followUpText: [] },
     ]
