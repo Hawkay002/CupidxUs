@@ -60,8 +60,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* REMOVED justify-content: center to prevent clipping tall cards */
-            justify-content: flex-start; 
+            justify-content: center; 
             overflow-y: auto; /* Ensure scrolling works */
         }
 
@@ -127,19 +126,21 @@
             border: 3px dotted var(--deep-red);
             border-radius: 15px;
             box-shadow: 8px 8px 0px rgba(201, 48, 44, 0.1);
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: relative;
             box-sizing: border-box;
             text-align: center;
-            margin: 20px auto;
-            
-            min-height: 20% !important;
-            justify-content: centre !important;
-            align-items: center !important;
+            margin: 0;
+            min-height: 200px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-         .phone-screen, .result-page {
+        
+        
+        
+        .phone-screen, .result-page {
             width: 90%;
             max-width: 400px;
             background: #fff;
@@ -154,12 +155,6 @@
         }
 
         /* --- SPECIFIC PAGE STYLES --- */
-        
-        .start-page {
-            padding: 20px;
-            min-height: 600px;
-        }
-
         .phone-screen {
             padding: 0;
             height: 700px;
@@ -168,7 +163,6 @@
         }
 
         .result-page {
-            /* Padding top avoids stamp overlap */
             padding: 100px 20px 40px 20px;
             height: auto; 
             min-height: 0;
@@ -270,7 +264,6 @@
             transform: scale(1.02);
         }
 
-        /* NEW: Button Group Styles for Result Page */
         .button-group {
             display: flex;
             justify-content: center;
@@ -279,7 +272,7 @@
             width: 100%;
             flex-wrap: wrap;
             position: relative;
-            z-index: 20; /* Ensure buttons are above everything */
+            z-index: 20;
         }
 
         .start-button, .restart-button {
@@ -311,18 +304,16 @@
             transform: rotate(-2deg);
         }
 
-        /* RESULT IMAGE FIX: Max Height Cap */
         .result-image {
             display: block;
             margin: 10px auto;
             width: auto;
             max-width: 90%; 
-            /* Cap height to avoid overly long card */
             max-height: 400px; 
             border: 5px solid #fff;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             transform: rotate(1deg);
-            object-fit: contain; /* Maintain aspect ratio inside the box */
+            object-fit: contain;
         }
 
         /* --- LINKS & FOOTER --- */
@@ -336,7 +327,6 @@
             cursor: pointer;
             font-family: 'Rye', serif;
             color: var(--deep-red);
-            margin-top: 20px
         }
 
         p2, p3 {
@@ -357,7 +347,6 @@
         
         footer a { color: var(--deep-red); }
 
-        /* --- INTERMEDIATE PAGE ICONS --- */
         .icon-button {
             background: none;
             border: none;
@@ -393,7 +382,6 @@
             transform: scale(1.1); 
         }
 
-        /* --- ANIMATIONS & TOOLTIPS --- */
         .icon {
             position: absolute;
             font-size: 30px;
@@ -440,7 +428,6 @@
             opacity: 1;
         }
 
-        /* Hide scrollbar */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: var(--soft-pink); border-radius: 10px; }
@@ -449,7 +436,40 @@
 
 <body>
     
-    <div class="start-page" id="start-page">
+    <div class="start-page" id="intro-screen">
+        <div class="stamp-mark">CONTENT<br>ADVISORY</div>
+        <h1 style="font-size: 1.8rem;">Rules of<br>Heart</h1>
+        
+        <div style="text-align: left; padding: 0 15px; font-family: 'Comfortaa', sans-serif; font-size: 0.85rem; line-height: 1.6; color: var(--text-brown);">
+            <p><strong>What is Cupid × Us?</strong><br>
+            A personality quiz inspired by MBTI, designed to uncover your unique Valentine spirit through a series of personal questions.</p>
+            
+            <p><strong>How it works:</strong><br>
+        * Answer honestly—there are no wrong answers in love.<br>
+        * Follow your intuition, not your logic.<br>
+        * At the end, you'll receive a custom-illustrated postcard reflecting your spirit.</p>
+        
+        <p style="font-style: italic; color: var(--deep-red); text-align: center; margin-top: 15px;">
+            "Will you find your true self, or the reflection of your soulmate?"
+        </p>
+            
+            <hr style="border: 0; border-top: 1px dotted var(--deep-red); margin: 15px 0;">
+
+        <div style="background: rgba(201, 48, 44, 0.05); padding: 10px; border-radius: 8px; border-left: 3px solid var(--deep-red);">
+            <p style="margin-top: 0;"><strong>⚠️ Content Advisory:</strong></p>
+            <p>This quiz uses <strong>graphic language</strong> designed to mimic how teenagers talk among friends to make the experience feel more personal. Some users may find the language offensive or attacking; please accept our apologies in advance.</p>
+            <p><strong>Age Rating:</strong> Not suitable for children under <strong>15 years old</strong>. Parental guidance is recommended as the dialogue may influence younger vocabularies.</p>
+            </div>
+            
+            <p style="text-align: center; font-style: italic; color: var(--deep-red); margin-top: 10px;">"Proceed only if you understand and agree."</p>
+
+        <div class="button-group">
+            <button id="accept-intro" class="start-button">I Understand & Proceed</button>
+        </div>
+          </div>
+    </div>
+
+    <div class="start-page" id="start-page" style="display: none;">
         <div class="stamp-mark">SPECIAL<br>DELIVERY</div>
         <div class="post-mark-right">
             <div class="heart-stamp">♥</div>
@@ -462,12 +482,10 @@
             </div>  
         </h1>
         
-        
         <div class="button-group">
             <button id="start1-button" class="start-button">Start</button>
         </div>
 
-        
         <p2>Personality quiz inspired by <a href="https://www.16personalities.com/free-personality-test">MBTI</a></p2>
         <p2 style="font-size: 0.9rem; font-family:'Comfortaa'">
             This quiz is created for entertainment purposes only.<br>
@@ -568,7 +586,7 @@ If not, you’re probably looking at your future partner.<br>
     <footer>
         <p2 style="font-size: 0.7rem; font-family:'Comfortaa'">
             All artworks are AI generated, You can use those freely.<br>
-            <a href="https://connect-liv2.onrender.com/" target="_blank">&copy; 2025-2026 Shovith Debnath (Sid). All Rights Reserved.</a>
+            <a href="https://connect-liv2.onrender.com/" target="_blank">© 2025-2026 Shovith Debnath (Sid). All Rights Reserved.</a>
         </p2>
     </footer>
 
@@ -576,6 +594,24 @@ If not, you’re probably looking at your future partner.<br>
     <audio id="dingSound" src="ding.mp3"></audio>
     <audio id="popSound" src="pop.mp3"></audio>
 
+    <script>
+        /* NEW: Script to handle the screen transition */
+        document.addEventListener('DOMContentLoaded', function() {
+            const introScreen = document.getElementById('intro-screen');
+            const startPage = document.getElementById('start-page');
+            const acceptBtn = document.getElementById('accept-intro');
+            const popSound = document.getElementById('popSound');
+
+            acceptBtn.addEventListener('click', function() {
+                // Play sound if available
+                if (popSound) popSound.play();
+                
+                // Transition
+                introScreen.style.display = 'none';
+                startPage.style.display = 'flex';
+            });
+        });
+    </script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
